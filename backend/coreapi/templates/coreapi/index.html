@@ -1,0 +1,38 @@
+{%extends 'coreapi/base.html'%} {% block title %}welcome{% endblock %} 
+
+{%block content%}
+<div>
+  <h2>items</h2>
+  <div>
+    {%for item in items%}
+    <div>
+      <a href="{% url 'item:detail' item.id %}">
+        <div>
+          <img src="{{item.image.url}}" alt="" style="width: 100px" />
+        </div>
+        <div>
+          <h2>{{item.name}}</h2>
+          <p>Price: {{item.price}}</p>
+        </div>
+      </a>
+      {%endfor%}
+    </div>
+  </div>
+
+  <div>
+    <h2>catagory</h2>
+    <div>
+      {%for catagory in catagories%}
+      <div>
+        <a href="">
+          <div>
+            <h2>{{catagory.name}}</h2>
+            <p>{{ catagory.items.count }} items</p>
+          </div>
+        </a>
+      </div>
+      {%endfor%}
+    </div>
+  </div>
+</div>
+{%endblock%}
