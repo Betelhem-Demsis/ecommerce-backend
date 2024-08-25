@@ -12,7 +12,10 @@ def detail(request,pk):
 
 @login_required
 def new(request):
-    if form=NewItemForm
-
+    form=NewItemForm
+    
+    return render(request,'item/form.html',{
+        'form':form
+    })
     
 
