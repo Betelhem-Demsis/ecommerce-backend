@@ -6,3 +6,5 @@ class NewItemForm(forms.ModelForm):
     class Meta:
         model=Item
         fields=['Category','name','description','price','image']
+
+    
